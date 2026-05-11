@@ -27,3 +27,16 @@ Sistema de gerenciamento para pequenos mercados desenvolvido como parte do Proje
 2. Execute o comando:
    ```bash
    dotnet run
+
+O terminal informará a URL (ex: http://localhost:5164). Certifique-se de que esta URL é a mesma configurada no arquivo app.js do front-end.
+
+## 3. Rodando o Front-end
+Navegue até a pasta Front-End-Web.
+
+Abra o arquivo index.html em qualquer navegador.
+
+Use as credenciais de teste:
+
+Usuário: admin
+
+Senha: 123
