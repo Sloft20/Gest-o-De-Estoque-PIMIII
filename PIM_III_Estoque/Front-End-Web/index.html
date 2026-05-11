@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acesso - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="imagem/fotoestoque.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="login-page-body">
+    
+    <div class="login-page-wrapper">
+        
+        <div class="login-card-glass">
+            <h2>Acesso ao Sistema</h2>
+            <p>Gerenciador de Estoque - Mercado Fictício</p>
+            
+            <form id="formLogin">
+                
+                <div class="input-group-icon">
+                    <label for="email">Usuário ou E-mail</label>
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="email" placeholder="Digite seu usuário" required />
+                </div>
+                
+                <div class="input-group-icon">
+                    <label for="senha">Senha</label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="senha" placeholder="Digite sua senha" required />
+                </div>
+
+                <button type="submit" class="btn-login-round">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
+</html>

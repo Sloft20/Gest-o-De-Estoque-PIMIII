@@ -1,0 +1,289 @@
+/* style.css - Regras Globais e Responsividade */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+ 
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(imagem/backgorund.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Container principal para centralizar o conteúdo */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- Layout Padrão (Mobile First) --- */
+
+/* Grid para o Dashboard: 1 coluna no celular */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Formulários (Login e Cadastro): 1 campo por linha */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.botao-inicio {
+  font-size: 22px; /* Tamanho da casinha */
+  color: #fdfcfc; /* Cor da casinha */
+  text-decoration: none; /* Remove o sublinhado do link */
+  padding: 10px;
+  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.botao-inicio:hover {
+  background-color: #007bff;
+  color: white;
+  border-radius: 25px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+.acesso-estoque {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  color: white; /* Cor do texto inicial */
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 500;
+
+  /* 2. O retângulo "invisível" */
+  background-color: transparent;
+  border-radius: 8px; /* Começa levemente arredondado */
+
+  /* 3. Transição suave para todas as propriedades */
+  transition: all 0.3s ease;
+}
+.acesso-estoque:hover {
+  background-color: #007bff; /* Cor de fundo que aparece */
+  color: white; /* Cor do texto muda para contrastar */
+  border-radius: 25px; /* As pontas ficam mais redondas */
+  transform: translateY(-2px); /* O "salto" sutil */
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Sombra suave */
+}
+.botao-clean i {
+  margin-right: 8px;
+}
+.sair {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 500;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.sair:hover {
+  background-color: #007bff;
+  color: white;
+  border-radius: 25px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+.novo-produto {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 500;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.novo-produto:hover {
+  background-color: #007bff;
+  color: white;
+  border-radius: 25px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #0056b3;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+/* --- Adaptação para Telas Maiores (Desktop/Tablets) --- */
+@media (min-width: 768px) {
+  /* Dashboard: 3 colunas no desktop */
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Formulário de Cadastro: coloca os campos lado a lado se necessário */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+}
+
+
+/* --- Estilos Específicos para a Página de Login (Glassmorphism) --- */
+
+/* Wrapper que centraliza o card e aplica o fundo na tela inteira */
+.login-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    /* Imagem de fundo baseada na inspiração (troque a URL se quiser) */
+    background: url('https://images.unsplash.com/photo-1599723226767-c61947b1c313?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+}
+
+/* O card semi-transparente com efeito de vidro */
+.login-card-glass {
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparente */
+    backdrop-filter: blur(15px); /* Efeito de desfoque do fundo */
+    -webkit-backdrop-filter: blur(15px); /* Suporte para Safari */
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px; /* Limita o tamanho no Desktop */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+.login-card-glass h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.login-card-glass p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* Grupos de input com ícones (posicionamento relativo) */
+.input-group-icon {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group-icon label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+
+/* Os inputs baseados na imagem (bordas arredondadas, fundo escuro transparente) */
+.input-group-icon input {
+    width: 100%;
+    padding: 15px 15px 15px 45px; /* Espaço na esquerda para o ícone */
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Arredondado */
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group-icon input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.input-group-icon input:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.4);
+    border-color: #007bff; /* Azul moderno no foco */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Posicionamento dos ícones do FontAwesome dentro do input */
+.input-group-icon i {
+    position: absolute;
+    left: 18px;
+    top: 42px; /* Ajuste para centralizar verticalmente no input */
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+}
+
+/* Botão Entrar arredondado e com hover */
+.btn-login-round {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff; /* Azul moderno */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Arredondado */
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.btn-login-round:hover {
+    background-color: #0056b3;
+}
+
+.btn-login-round:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+/* Responsividade: Garante que o card não quebre em celulares muito pequenos */
+@media (max-width: 480px) {
+    .login-card-glass {
+        padding: 30px 20px;
+    }
+}

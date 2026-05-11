@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos do Dashboard */
+        .header-painel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0056b3;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .header-painel nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        /* Estilo dos Cards de Informação */
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header-painel">
+            <h1>Visão Geral</h1>
+            <nav>
+                <a href="cadastro.html">Novo Produto</a>
+                <a href="gerenciamento.html">Ver Estoque</a>
+                <a href="index.html">Sair</a>
+            </nav>
+        </header>
+        
+        <main class="dashboard-grid">
+            <div class="card">
+                <h3>Total de Produtos</h3>
+                <p id="totalProdutos">Carregando...</p>
+            </div>
+            
+            <div class="card">
+                <h3>Produtos em Baixa</h3>
+                <p id="produtosBaixa">Carregando...</p>
+            </div>
+            
+            <div class="card">
+                <h3>Valor Total do Estoque</h3>
+                <p id="valorEstoque">Carregando...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

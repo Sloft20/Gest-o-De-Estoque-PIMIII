@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produto - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="imagem/fotoestoque.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <style>
+      .form-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .btn-salvar {
+        background-color: #28a745; 
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-salvar:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-painel" style="background-color: #333; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <h2>Cadastrar Produto</h2>
+        <nav>
+          <a href="inicio.html" class="botao-inicio" title="Ir para o início">
+            <i class="fa-solid fa-house"></i>
+          </a>
+          <a href="gerenciamento.html" class="acesso-estoque">Ver Estoque</a>
+        </nav>
+      </header>
+
+      <div class="form-container">
+        <form id="formCadastro">
+          <div class="form-group">
+            <label for="nome">Nome do Produto</label>
+            <input type="text" id="nome" placeholder="Ex: Arroz Tipo 1 - 5kg" required />
+          </div>
+
+          <div class="form-group">
+            <label for="codigoBarras">Código de Barras</label>
+            <input type="text" id="codigoBarras" placeholder="Ex: 7891010101010" required />
+          </div>
+
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;" required>
+              <option value="">Selecione uma categoria...</option>
+              <option value="alimentos">🍚Alimentos Básicos</option>
+              <option value="limpeza">Material de Limpeza</option>
+              <option value="bebidas">Bebidas</option>
+              <option value="higiene">Higiene Pessoal</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quantidade">Quantidade em Estoque</label>
+              <input type="number" id="quantidade" placeholder="Ex: 50" min="0" required />
+            </div>
+
+            <div class="form-group">
+              <label for="preco">Preço Unitário (R$)</label>
+              <input type="number" id="preco" placeholder="Ex: 22.50" step="0.01" min="0" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-salvar">Salvar Produto</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
+</html>

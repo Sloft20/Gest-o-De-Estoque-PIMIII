@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Produto - Gerenciador de Estoque</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="imagem/fotoestoque.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      .form-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .btn-salvar {
+        background-color: #28a745; 
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-salvar:hover {
+        background-color: #218838;
+      }
+      .btn-cancelar {
+        background-color: #6c757d; 
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header-painel" style="background-color: #333; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <h2>Editar Produto</h2>
+        <nav>
+          <a href="inicio.html" class="botao-inicio">
+            <i class="fa-solid fa-house"></i>
+          </a>
+          <a href="gerenciamento.html" class="acesso-estoque">Ver Estoque</a>
+        </nav>
+      </header>
+
+      <div class="form-container">
+        <form id="formEditar">
+          <input type="hidden" id="editId" />
+
+          <div class="form-group">
+            <label for="editNome">Nome do Produto</label>
+            <input type="text" id="editNome" required />
+          </div>
+
+          <div class="form-group">
+            <label for="editCodigoBarras">Código de Barras</label>
+            <input type="text" id="editCodigoBarras" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="editQuantidade">Quantidade em Estoque</label>
+              <input type="number" id="editQuantidade" min="0" required />
+            </div>
+
+            <div class="form-group">
+              <label for="editPreco">Preço Unitário (R$)</label>
+              <input type="number" id="editPreco" step="0.01" min="0" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-salvar">Salvar Alterações</button>
+          <a href="gerenciamento.html" class="btn-cancelar">Cancelar</a>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
+</html>
